@@ -40,7 +40,7 @@
 				options.turn(currentDeg/359);
 			}
 			
-			knob.on('mousedown', function(e){
+			knob.on('mousedown touchstart', function(e){
 			
 				e.preventDefault();
 			
@@ -53,7 +53,9 @@
 				var a, b, deg, tmp,
 					rad2deg = 180/Math.PI;
 				
-				knob.on('mousemove.rem',function(e){
+				knob.on('mousemove.rem touchmove.rem',function(e){
+					
+					e = (e.originalEvent.touches) ? e.originalEvent.touches[0] : e;
 					
 					a = center.y - e.pageY;
 					b = center.x - e.pageX;
@@ -100,7 +102,7 @@
 					options.turn(currentDeg/359);
 				});
 			
-				doc.on('mouseup.rem',function(){
+				doc.on('mouseup.rem  touchend.rem',function(){
 					knob.off('.rem');
 					doc.off('.rem');
 					
