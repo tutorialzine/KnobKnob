@@ -26,7 +26,7 @@
 			var el = $(this);
 			el.append(tpl);
 			
-			var knob = $('.knob',el)
+			var knob = $('.knob',el),
 				knobTop = knob.find('.top'),
 				startDeg = -1,
 				currentDeg = 0,
