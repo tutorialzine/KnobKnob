@@ -97,7 +97,7 @@
 					lastDeg = tmp;
 		
 					knobTop.css('transform','rotate('+(currentDeg)+'deg)');
-					options.turn(currentDeg/359);
+					options.turn(currentDeg/360);
 				});
 			
 				doc.on('mouseup.rem',function(){
