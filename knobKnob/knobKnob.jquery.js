@@ -35,7 +35,7 @@
 				doc = $(document);
 			
 			if(options.value > 0 && options.value <= 359){
-				rotation = currentDeg = options.value;
+				rotation = lastDeg = currentDeg = options.value;
 				knobTop.css('transform','rotate('+(currentDeg)+'deg)');
 				options.turn(currentDeg/359);
 			}
