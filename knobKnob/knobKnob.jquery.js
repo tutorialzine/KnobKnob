@@ -13,21 +13,22 @@
 		var options = $.extend({
 			snap: 0,
 			value: 0,
+			knobName: '',
 			turn: function(){}
 		}, props || {});
 	
-		var tpl = '<div class="knob">\
-				<div class="top"></div>\
-				<div class="base"></div>\
-			</div>';
+		var tpl = '<div class="knob '+options.knobName+'">\
+						<div class="top '+options.knobName+'_top"></div>\
+						<div class="base '+options.knobName+'_bottom"></div>\
+				   </div>';
 	
 		return this.each(function(){
 			
 			var el = $(this);
 			el.append(tpl);
 			
-			var knob = $('.knob',el),
-				knobTop = knob.find('.top'),
+			var knob = $('.'+options.knobName,el),
+				knobTop = knob.find('.'+options.knobName+'_top'),
 				startDeg = -1,
 				currentDeg = 0,
 				rotation = 0,
@@ -35,7 +36,7 @@
 				doc = $(document);
 			
 			if(options.value > 0 && options.value <= 359){
-				rotation = lastDeg = currentDeg = options.value;
+				rotation = currentDeg = lastDeg = options.value;
 				knobTop.css('transform','rotate('+(currentDeg)+'deg)');
 				options.turn(currentDeg/359);
 			}
