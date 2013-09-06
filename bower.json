@@ -1,0 +1,17 @@
+{
+  "name": "knobknob",
+  "license": "MIT",
+  "version": "1.0.0",
+  "gitHead": "f41feb8bb4b01db3d02c91c7cbf6b4034f183fae",
+  "main": [
+    "knobKnob/knobKnob.jquery.js",
+    "knobKnob/knobKnob.css"
+  ],
+  "dependencies": {
+    "jquery": "~1.9.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/martinaglv/KnobKnob.git"
+  }
+}
